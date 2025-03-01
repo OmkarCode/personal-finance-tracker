@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Users</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <h1>Users List</h1>
+    <button id="createUserBtn">Create User</button>
+
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- User Rows Populated by JS -->
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <!-- Pagination will be dynamically populated -->
+    </div>
+
+    <!-- Modal for Creating User -->
+    <div id="createUserModal" style="display: flex;">
+      <div class="modal-content">
+        <h2>Create User</h2>
+        <form
+          id="createUserForm"
+          onsubmit="event.preventDefault(); createUser();"
+        >
+          <label for="userEmail">Email:</label>
+          <input
+            type="email"
+            id="userEmail"
+            placeholder="Enter email"
+            required
+          /><br />
+
+          <label for="userContact">Contact:</label>
+          <input
+            type="text"
+            id="userContact"
+            placeholder="Enter contact number"
+            required
+          /><br />
+
+          <button type="submit">Submit</button>
+          <button
+            type="button"
+            class="cancel-btn"
+            onclick="$('#createUserModal').hide();"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../assets/libs/jquery-3.6.0.min.js"></script>
+
+    <script src="../assets/js/users.js"></script>
+  </body>
+</html>
